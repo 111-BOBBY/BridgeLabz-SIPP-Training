@@ -1,0 +1,31 @@
+QUESTION 1:
+Class User
+    Attributes: username, password
+    Constructor(username, password)
+    Method login()
+        Print "Base login - should be overridden"
+
+Class Student inherits User
+    Attribute: isEnrolled
+    Constructor(username, password, isEnrolled)
+    Override Method login()
+        IF isEnrolled == true
+            Print "Student login successful. Exams available."
+        ELSE
+            Print "Student not enrolled. Cannot access exams."
+
+Class Admin inherits User
+    Attribute: hasPrivileges
+    Constructor(username, password, hasPrivileges)
+    Override Method login()
+        IF hasPrivileges == true
+            Print "Admin login successful. Access to exam management."
+        ELSE
+            Print "Invalid admin privileges."
+
+Main Program:
+    Create Student object s1 with (username="john123", password="abc", isEnrolled=true)
+    Create Admin object a1 with (username="admin1", password="xyz", hasPrivileges=true)
+
+    Call s1.login()
+    Call a1.login()
