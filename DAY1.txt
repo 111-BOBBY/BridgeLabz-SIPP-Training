@@ -80,10 +80,49 @@ Function serveCustomer()
 end
 
 QUESTION 3:
-Start
-Create a generic List<T>
-Add elements of different types
-Use Streams to filter, map, or reduce data
-Example: Filter even numbers from list
-End
+(1):
+START
+
+CREATE HashMap studentScores
+
+ADD ("Alice", 85) to studentScores
+ADD ("Bob", 92) to studentScores
+ADD ("Charlie", 78) to studentScores
+ADD ("David", 95) to studentScores
+
+SET maxEntry = null
+
+FOR each entry in studentScores
+    IF maxEntry is null OR entry.value > maxEntry.value
+        SET maxEntry = entry
+    ENDIF
+ENDFOR
+
+PRINT "Highest Scorer = " + maxEntry.key + " with score " + maxEntry.value
+
+END
+(2):
+START
+
+CREATE an empty map called studentScores
+
+INSERT ("Alice", 85) into studentScores
+INSERT ("Bob", 92) into studentScores
+INSERT ("Charlie", 78) into studentScores
+INSERT ("David", 95) into studentScores
+
+SET maxStudent = ""
+SET maxScore = -∞   // start with very small number
+
+FOR each (student, score) in studentScores
+    IF score > maxScore THEN
+        SET maxScore = score
+        SET maxStudent = student
+    ENDIF
+ENDFOR
+
+PRINT "Highest Scorer = " + maxStudent + " with score " + maxScore
+
+END
+
 
