@@ -1,0 +1,80 @@
+QUESTI0N 1:
+(a):
+Class Pet
+    Attributes: name, age
+    Constructor(name, age)
+    Method displayInfo()
+
+Class Dog inherits Pet
+    Attribute: breed
+    Constructor(name, age, breed)
+    Override displayInfo()
+
+Class Cat inherits Pet
+    Attribute: color
+    Constructor(name, age, color)
+    Override displayInfo()
+
+Class Bird inherits Pet
+    Attribute: wingspan
+    Constructor(name, age, wingspan)
+    Override displayInfo()
+
+Main:
+    Create Dog, Cat, Bird objects
+    Call displayInfo() for each
+
+
+(b)
+Class Member
+    Attributes: name, id, membershipDate
+    Constructor(name, id, membershipDate)
+    Method checkMembershipValidity()
+        IF currentDate - membershipDate < 1 year
+            RETURN "Valid"
+        ELSE
+            RETURN "Expired"
+
+Main:
+    Create Member objects
+    Call checkMembershipValidity()
+
+
+QUESTION 2
+(a):
+Initialize Stack undoStack
+
+Function performOperation(operation)
+    Push operation onto undoStack
+
+Function undoOperation()
+    IF undoStack is not empty
+        operation = Pop from undoStack
+        Revert operation
+    ELSE
+        Print "Nothing to undo"
+
+(b):
+Initialize Queue normalQueue
+Initialize Queue emergencyQueue
+
+Function addCustomer(customer, priority)
+    IF priority == "emergency"
+        Enqueue customer in emergencyQueue
+    ELSE
+        Enqueue customer in normalQueue
+
+Function serveCustomer()
+    IF emergencyQueue not empty
+        Dequeue from emergencyQueue
+    ELSE IF normalQueue not empty
+        Dequeue from normalQueue
+    ELSE
+        Print "No customers waiting"
+
+QUESTION 3:
+
+Create a generic List<T>
+Add elements of different types
+Use Streams to filter, map, or reduce data
+Example: Filter even numbers from list
