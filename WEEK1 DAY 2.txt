@@ -1,0 +1,80 @@
+WEEK1 DAY 2:
+QUESTION 1:
+(A):
+Start
+Enum TrafficLight
+    Values: RED, YELLOW, GREEN
+
+Class TrafficController
+    Attribute: currentLight
+    Constructor: set initial light (RED)
+    Method switchLight()
+        IF currentLight == RED → set YELLOW
+        ELSE IF currentLight == YELLOW → set GREEN
+        ELSE IF currentLight == GREEN → set RED
+    Method displayLight()
+        Print currentLight
+
+Main:
+    Create TrafficController
+    Loop for N intervals
+        controller.displayLight()
+        Wait some seconds
+        controller.switchLight()
+end
+(B)
+Start
+Abstract Class Crop
+    Attributes: name, waterRequirement
+    Abstract Method getWaterRequirement()
+    Abstract Method harvest()
+
+Class Rice inherits Crop
+    Override getWaterRequirement()
+        Return "High water required"
+    Override harvest()
+        Print "Harvesting Rice"
+
+Class Wheat inherits Crop
+    Override getWaterRequirement()
+        Return "Medium water required"
+    Override harvest()
+        Print "Harvesting Wheat"
+
+Main:
+    Create Rice object
+    Create Wheat object
+    Print water requirements
+    Call harvest()
+end
+
+
+QUESTION 2:
+(A):
+start
+Use Array timeSlots to track duration for each question
+
+Main:
+    Input number of questions (n)
+    For each question i in 1 to n
+        Assign timeSlots[i] = time allowed (e.g., 30 sec)
+    
+    For each question i in 1 to n
+        Print "Question i starts"
+        Countdown timeSlots[i]
+        If time expires
+            Print "Time up for Question i"
+end
+(b):
+start
+Class Job
+    Attributes: id, priority, executionTime
+    Constructor(id, priority, executionTime)
+
+Main:
+    Create list of jobs
+    Sort jobs by priority (higher first)
+    For each job in list
+        Execute job (simulate by waiting executionTime)
+        Print "Job <id> completed"
+end
