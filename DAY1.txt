@@ -1,5 +1,6 @@
 QUESTI0N 1:
 (a):
+Start
 Class Pet
     Attributes: name, age
     Constructor(name, age)
@@ -23,9 +24,11 @@ Class Bird inherits Pet
 Main:
     Create Dog, Cat, Bird objects
     Call displayInfo() for each
+end
 
 
 (b)
+Start
 Class Member
     Attributes: name, id, membershipDate
     Constructor(name, id, membershipDate)
@@ -38,10 +41,12 @@ Class Member
 Main:
     Create Member objects
     Call checkMembershipValidity()
+end
 
 
 QUESTION 2
 (a):
+Start
 Initialize Stack undoStack
 
 Function performOperation(operation)
@@ -53,8 +58,9 @@ Function undoOperation()
         Revert operation
     ELSE
         Print "Nothing to undo"
-
+end
 (b):
+Start
 Initialize Queue normalQueue
 Initialize Queue emergencyQueue
 
@@ -71,10 +77,13 @@ Function serveCustomer()
         Dequeue from normalQueue
     ELSE
         Print "No customers waiting"
+end
 
 QUESTION 3:
-
+Start
 Create a generic List<T>
 Add elements of different types
 Use Streams to filter, map, or reduce data
 Example: Filter even numbers from list
+End
+
