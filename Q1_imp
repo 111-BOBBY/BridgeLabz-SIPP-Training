@@ -1,0 +1,41 @@
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface Important {
+    String value() default "This is an important method";
+}
+
+class MyService {
+
+    @Important("Critical business logic")
+    public void processPayment() {
+        System.out.println("Processing payment...");
+    }
+
+    @Important
+    public void generateReport() {
+        System.out.println("Generating report...");
+    }
+
+    public void helperMethod() {
+        System.out.println("Helper logic (not important).");
+    }
+}
+
+import java.lang.reflect.Method;
+
+public class AnnotationDemo {
+    public static void main(String[] args) {
+        Method[] methods = MyService.class.getDeclaredMethods();
+
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(Important.class)) {
+                Important imp = method.getAnnotation(Important.class);
+                System.out.println("Method: " + method.getName() + " -> " + imp.value());
+            }
+        }
+    }
+}
