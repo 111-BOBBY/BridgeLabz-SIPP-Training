@@ -1,0 +1,55 @@
+import java.util.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.annotation.ElementType;
+
+public @interface  ImportantCustomer { }
+
+public CategoryInfo{
+    String category();
+    String subCategory();
+}
+
+public @interface DiscountApplicable {
+    int minOrders();
+    double minValue();
+}
+
+@ImportantCustomer
+
+public class Customer {
+    private String name;
+    private int orders;
+
+    public Customer(String name,int orders){
+        this.name = name;
+        this.order = orders;
+    }
+    public String getName() {return name;}
+    public int getOrders(){return orders;}
+}
+
+@CategoryInfo(category = "electronics" , subCategory = "Home Appliances")
+
+public class Item{
+    private String name;
+    private double price;
+
+    public Item(String name,double price){
+        this.name = name;
+        this.price = price;
+    }
+    public String getName(){return name;}
+    public double getPrice(){return price;}
+}
+
+public class AnnotationTest {
+    public static void main(String[] args){
+        if(Customer.class.isAnnotationPresent(ImportantCustomer.class)) {
+            System.out.println("Customer is marked as Important.");
+        }
+
+        DiscountAplicable discount = Customer.class.getAnnoatation
+
+    }
+}
